@@ -10,11 +10,11 @@ var FivePM = $("#Five");
 
 
 console.log(moment().hours())
-
+console.log(moment().date())
 //Current Date displayed. Use Date.getTime() to figure this out - scratch that
 //getFullYear(), getMonth(), getDate() are what I want to use
 //This should #%&*ing work, idk why it doesn't:
-
+$("#date").text((moment().month()) + 1 + "/" + (moment().date()) + "/" + (moment().year()))
 //$("#date").text = (Day.getMonth()) + "/" + (Day.getDate()) + "/" + (Day.getFullYear());
 //document.getElementById("date").innerHTML = (Day.getMonth() + 1) + "/" + (Day.getDate()) + "/" + (Day.getFullYear());
 
@@ -28,15 +28,16 @@ $(".text").each(function(){
 var time =  $(this).attr("data-time")
 
 
-//if (time < currentHours){
-//background-color: grey;
-//}
-//if (time = currentHours){
- //   background-color: red
-//}
-//if (time > currentHours){
-//    background-color: green;
-//}
+if (time < currentHours){
+    $(this).css("background-color", "grey");
+}
+if (time = currentHours){
+    $(this).css("background-color", "red");
+}
+  
+if (time = currentHours){
+    $(this).css("background-color", "green");
+}
 
 
 })
